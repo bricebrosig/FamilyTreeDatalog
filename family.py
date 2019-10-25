@@ -49,19 +49,40 @@ parent_of = {
 
 
 def sibling_of(X):
-    ...
+    def f():
+        for item in parent_of.items():
+            key, value = item
+            if value == parent_of[X] and X != key:
+                yield key
+    return list(f())
 
 def brother_of(X):
-    ...
+    def f():
+        for sib in sibling_of(X):
+            if sib in male:
+                yield sib
+    return list(f())
 
 def sister_of(X):
-    ...
+    def f():
+        for sib in sibling_of(X):
+            if sib in female:
+                yield sib
+    return list(f())
 
 def mother_of(X):
-    ...
+    def f():
+        for par in parent_of[X]:
+            if par in female:
+                yield par
+    return list(f())
 
 def father_of(X):
-    pass
+    def f():
+        for par in parent_of[X]:
+            if par in male:
+                yield par
+    return list(f())
 
 def gp_of(X):
     pass
