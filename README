@@ -1,0 +1,28 @@
+Brice Brosig
+Programming Languages Assignment 4
+
+The family tree is that of William Shakespeare. Starting with his parents and going down
+to his grandchildren meaning it spans 4 different generations and contains more than 15 people.
+NOTE that there is Thomas Quiney and Thomas II Quiney. The names all include last names 
+women who were married maintain their maiden names in the database to show who married 
+into the family. 
+
+Prolog
+Run it just like we did in class. Use ancestor_of the same way you might for gp_of.
+
+Python
+Run the program using python 3.7 either with interpretive mode or just regular running
+of a file. If you run the file it will print all the example cases of each of the queries.
+If you do interpretted, you can do you own queries.
+
+BE SURE TO SPELL THINGS RIGHT AND INCLUDE LASTNAMES.
+
+https://www.nosweatshakespeare.com/wp-content/uploads/2016/07/Shakespeare_Family_Tree-631x1030.png
+^ here is a link to the family tree. I left out a few members if they died in infancy or 
+dont have a birthday... sorry about em...
+
+if you have ANY problems running this program feel free to email me
+bricebrosig@my.unt.edu
+    ""     @gmail
+
+Have fun!

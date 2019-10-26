@@ -103,15 +103,15 @@ def gp_of(X):
 
 
 def ancestor_of(X):
-    # FIXME: this don't work dad
     def f(y):
         if parent_of.get(y):
-            return parent_of.get(y)
-        else:
             for par in parent_of.get(y, []):
-                yield ancestor_of(par)
-
-    return list(f(X))
+                yield parent_of.get(y)
+                for ans in f(par):
+                    yield ans
+        else:
+            return []
+    return list(set([item for sublist in list(f(X)) for item in sublist]))
 
 
 def cousin_of(X):
@@ -143,14 +143,14 @@ def uncle_of(X):
 
 
 # test cases here
-# print(sibling_of('Susanna Shakespeare'))
-# print(brother_of('Susanna Shakespeare'))
-# print(sister_of('William Shakespeare'))
-# print(mother_of('Hamnet Shakespeare'))
-# print(father_of('Richard Quiney'))
-# print(gp_of('Elizabeth Hall'))
-print(ancestor_of('Shakespeare Quiney'))  # nocheckin
-print(cousin_of('Elizabeth Hall'))  # nocheckin
-# print(aunt_or_uncle_of('Thomas II Quiney'))
-# print(aunt_of('Richard Quiney'))
-# print(uncle_of('Susanna Shakespeare'))
+print(sibling_of('Susanna Shakespeare'))
+print(brother_of('Susanna Shakespeare'))
+print(sister_of('William Shakespeare'))
+print(mother_of('Hamnet Shakespeare'))
+print(father_of('Richard Quiney'))
+print(gp_of('Elizabeth Hall'))
+print(list(ancestor_of('Shakespeare Quiney')))
+print(cousin_of('Elizabeth Hall'))
+print(aunt_or_uncle_of('Thomas II Quiney'))
+print(aunt_of('Richard Quiney'))
+print(uncle_of('Susanna Shakespeare'))
